@@ -1,0 +1,119 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="feishu_msg_type_interactive">Интерактивный</string>
+    <string name="feishu_msg_type_interactive_message_card">JSON карточки сообщения</string>
+    <string name="Customize_API">Пользовательский API</string>
+    <string name="Corp_ID">Corp ID</string>
+    <string name="Agent_ID">Agent ID</string>
+    <string name="App_Secret">Secret</string>
+    <string name="is_at_all">Упомянуть всех</string>
+    <string name="specified_member">Указанный участник</string>
+    <string name="touser">Пользователям</string>
+    <string name="toparty">Отделам</string>
+    <string name="totag">Тегам</string>
+    <string name="touser_tips">Список ID пользователей-получателей; несколько значений разделяются символом |, максимум 1000</string>
+    <string name="toparty_tips">Список ID отделов-получателей; несколько значений разделяются символом |, максимум 1000</string>
+    <string name="totag_tips">Список ID тегов-получателей; несколько значений разделяются символом |, максимум 1000</string>
+    <string name="customize_api_tips">Обход ограничений белого списка IP через обратный прокси (proxy_pass).</string>
+    <string name="specified_member_tips2">userid получателя сообщения, до 20 за раз; значения разделяются символом |</string>
+    <string name="server_chan_send_key">SendKey</string>
+    <string name="server_chan_channel">Канал сообщений</string>
+    <string name="server_chan_channel_tips">Можно указать динамически до двух каналов, разделяя их символом |</string>
+    <string name="server_chan_channel_hint">Необязательно, например 9|66</string>
+    <string name="server_chan_openid">Копия OpenID</string>
+    <string name="server_chan_openid_tips">Поддерживаются только тестовые учётные записи и каналы сообщений Wework</string>
+    <string name="server_chan_openid_hint">Необязательно, несколько openid разделяются запятыми</string>
+    <string name="TelegramApiToken">ApiToken или адрес пользовательского прокси (начинается с http)</string>
+    <string name="TelegramChatId">ChatId</string>
+    <string name="TelegramMessageThreadId">Тема</string>
+    <string name="Method" formatted="false">Метод</string>
+    <string name="parse_mode">Режим разметки</string>
+    <string name="parse_mode_text">Текст</string>
+    <string name="parse_mode_html">HTML</string>
+    <string name="parse_mode_markdown">MarkdownV2</string>
+
+    <string name="SmsSimSlot">Слот SIM</string>
+    <string name="same_source">Тот же источник</string>
+    <string name="SmsMobiles">Номера телефонов получателей</string>
+    <string name="SmsMobilesTips">Подсказка:\n1. Разделяйте номера точкой с запятой, например 15888888888;19999999999\n2. Можно вставить тег `{{FROM}}` для автоответа по SMS (сценарии SMS/вызов)</string>
+    <string name="OnlyNoNetwork">Включать только при отсутствии сети</string>
+    <string name="notify_content_label">Уведомление</string>
+    <string name="device_name">Имя устройства</string>
+    <string name="sim_sub_id">SubId SIM</string>
+    <string name="sim1_remark" tools:ignore="Typos">SIM1 SubId/Метка</string>
+    <string name="sim2_remark" tools:ignore="Typos">SIM2 SubId/Метка</string>
+    <string name="carrier_mobile" tools:ignore="Typos">Метка SIM,\nнапример MTS_88888888</string>
+    <string name="tip_number_only_error_message">Число должно быть больше 0!</string>
+    <string name="regexp_number_only" tools:ignore="TypographyDashes,Typos">^[1-9]?\\d+$</string>
+    <string name="retry_interval">Интервал повторов</string>
+    <string name="retry_interval_tips">Отключено при количестве попыток = 0;\nинтервал увеличивается</string>
+    <string name="filtering_duplicate_messages">Фильтровать дубликаты сообщений</string>
+    <string name="filtering_duplicate_messages_tips">0 = отключено; дубликат определяется по типу + источнику + содержимому</string>
+    <string name="forward_sms">Пересылка SMS</string>
+    <string name="forward_sms_tips">Главный переключатель. Требуются разрешения на чтение SMS, в том числе сообщений с кодами подтверждения.</string>
+    <string name="sms_command">SMS-команды</string>
+    <string name="sms_command_tips">Запуск HttpServer или FRPC с помощью SMS-команды</string>
+    <string name="close_to_earpiece_turn_off_screen">Выключать экран при приближении к динамику</string>
+    <string name="close_to_earpiece_turn_off_screen_tips">После отключения системной автоблокировки закройте датчик приближения, чтобы выключить экран, сохранив устройство активным</string>
+    <string name="safe_phone_tips">Обрабатывать запросы только с указанных телефонов</string>
+    <string name="forward_calls">Пересылка журнала вызовов</string>
+    <string name="forward_calls_tips">Главный переключатель. Требуются разрешения на чтение журнала вызовов и контактов.</string>
+    <string name="forward_app_notify">Пересылка уведомлений приложений</string>
+    <string name="forward_app_notify_tips">Главный переключатель. Требуется разрешение на чтение уведомлений.</string>
+    <string name="cancel_app_notify">Автоматически закрывать уведомление</string>
+    <string name="not_user_present">Только когда пользователь отсутствует</string>
+    <string name="enable_custom_templates">Глобальный пользовательский шаблон</string>
+    <string name="enable_custom_templates_tips">Приоритет: шаблон правила пересылки &gt; глобальный шаблон &gt; системный шаблон</string>
+    <string name="enable_regex_replace">Замена содержимого по регулярным выражениям</string>
+    <string name="enable_regex_replace_tips">Формат: РегулярноеВыражение===РезультатЗамены, по одному правилу на строку.\nНапример: (\\d{3})\\d+(\\d{4})===$1****$2</string>
+    <string name="enable_exclude_from_recents">Скрыть из списка недавних приложений</string>
+    <string name="enable_exclude_from_recents_tips">Сначала заблокируйте приложение, затем включите скрытие</string>
+    <string name="custom_template">Пользовательский шаблон</string>
+    <string name="custom_template_tips">Вставьте нужные теги; оставьте пустым для стандартного шаблона</string>
+    <string name="insert_sender">Телефон</string>
+    <string name="battery_setting">Оптимизация батареи</string>
+    <string name="battery_setting_tips">Настройте ручное управление: автозапуск, связанный запуск и работу в фоне</string>
+    <string name="unknown_number">Неизвестный номер</string>
+    <string name="unknown_area">Неизвестный регион</string>
+    <string name="unsupport">Ваш телефон не поддерживает эту настройку</string>
+    <string name="isIgnored">Настройка применена!</string>
+    <string name="isIgnored2">Невозможно напрямую изменить системные настройки энергосбережения</string>
+    <string name="sim1" tools:ignore="Typos">SIM1</string>
+    <string name="sim2" tools:ignore="Typos">SIM2</string>
+    <string name="mu_rule_sms_tips">Пример нескольких условий (синтаксис см. в wiki):\n\nAND IS PHONE_NUM EQUALS 10086\n[space]OR IS PHONE_NUM EQUALS 10011\nAND IS MSG_CONTENT CONTAIN arrears\n\nПравило означает: пересылать SMS, если номер — 10086 или 10011, а текст содержит указанное слово.\n\nПробел в начале строки задаёт уровень вложенности. Слишком сложные правила могут потреблять много памяти.</string>
+    <string name="mu_rule_call_tips">Пример нескольких условий (синтаксис см. в wiki):\n\nAND IS PHONE_NUM EQUALS 10086\n[space]OR IS PHONE_NUM EQUALS 10011\nAND IS CALL_TYPE IS 3\n\nПравило означает: пересылать вызов с номера 10086 или 10011, если тип вызова — пропущенный.\n\nПробел в начале строки задаёт уровень вложенности. Типы вызовов: 1.Входящий завершён 2.Исходящий завершён 3.Пропущенный 4.Входящий обнаружен 5.Входящий принят 6.Исходящий начат</string>
+    <string name="mu_rule_app_tips">Пример нескольких условий (синтаксис см. в wiki):\n\nAND IS PACKAGE_NAME EQUALS com.tencent.mm\n[space]OR IS PACKAGE_NAME EQUALS com.tencent.mobileqq\nAND IS INFORM_CONTENT CONTAIN arrears\n\nПравило означает: пересылать уведомление указанных приложений, если его содержимое соответствует условию.\n\nПробел в начале строки задаёт уровень вложенности.</string>
+    <string name="post">POST</string><string name="get">GET</string><string name="put">PUT</string><string name="patch">PATCH</string><string name="udp">UDP</string><string name="tcp">TCP</string><string name="mqtt">MQTT</string><string name="ssl">SSL</string>
+    <string name="operating_instruction">Важно:\nЭта функция предназначена только для личного использования при переходе со старого телефона на новый. Ответственность за незаконное использование несёт пользователь.\n\nИнструкция:\n1. Подключите оба телефона к одной Wi‑Fi сети (изоляция AP должна быть отключена). При необходимости настройте Frpc.\n2. На старом телефоне нажмите Push, чтобы отправить конфигурацию на сервер.\n3. На новом телефоне нажмите Pull, чтобы получить конфигурацию.\n\nПримечания:\n1. Версии приложения на клиенте и сервере должны совпадать.\n2. После импорта отправители и правила будут полностью заменены, история очищена.\n3. Активные запросы, механизмы удержания приложения и личные настройки не клонируются.\n4. После импорта снова откройте общие настройки и включите необходимые функции или выдайте разрешения вручную.</string>
+    <string name="operating_instruction_offline">Важно:\nЭта функция предназначена только для личного использования при переходе со старого телефона на новый.\n\nПримечания:\n1. Версии экспортирующего и импортирующего приложения должны совпадать.\n2. После импорта отправители и правила будут полностью заменены, история очищена.\n3. Активные запросы, механизмы удержания приложения и личные настройки не клонируются.\n4. После импорта снова откройте общие настройки и включите необходимые функции.</string>
+    <string name="push">Отправить</string><string name="pull">Получить</string><string name="stop">Остановить</string><string name="export">Экспорт</string><string name="imports">Импорт</string>
+    <string name="old_mobile_phone">Старый телефон</string><string name="new_mobile_phone">Новый телефон</string>
+    <string name="server_ip">IP сервера: </string><string name="server_port">Порт: </string>
+    <string name="invalid_ip">Введите корректный IP-адрес или домен</string><string name="invalid_mqtt_message_topic">Введите корректную тему сообщения</string><string name="invalid_port">Введите корректный порт</string><string name="no_network">Нет подключения к сети.</string>
+    <string name="appicon">Значок приложения</string><string name="user_app">Пользовательское приложение</string><string name="system_app">Системное приложение</string>
+    <string name="tips_get_installed_apps">Предоставьте разрешение GET_INSTALLED_APPS</string>
+    <string name="tips_notification">Предоставьте разрешение на уведомления, чтобы приложение могло работать в фоне.</string>
+    <string name="tips_notification_listener">Предоставьте SmsForwarder доступ к чтению уведомлений, иначе уведомления других приложений не смогут пересылаться.</string>
+    <string name="pushplus_website">Официальный сайт</string><string name="pushplus_plus">www.pushplus.plus</string><string name="pushplus_hxtrip">pushplus.hxtrip.com</string><string name="pushplus_token">Токен</string>
+    <string name="pushplus_token_tips">Внимательно проверяйте адрес официального сайта</string><string name="pushplus_topic">Тема</string><string name="pushplus_template">Шаблон</string><string name="html">html</string><string name="pushplus_channel">Канал</string><string name="pushplus_webhook">Код Webhook</string><string name="pushplus_callback">URL обратного вызова</string><string name="pushplus_valid_time">Срок действия (сек.)</string>
+    <string name="wechat">WeChat</string><string name="account">✱Учётная запись</string><string name="servers">✱Серверы</string><string name="email_settings">✱Почта</string>
+    <string name="encryption_protocol">E2EE</string><string name="encryption_protocol_tips">Для шифрования или подписи писем укажите сертификат OpenPGP или S/MIME.</string><string name="plain">Без шифрования</string><string name="smime">S/MIME</string><string name="openpgp">OpenPGP</string><string name="openkeychain">OpenKeychain</string>
+    <string name="proxy_settings">Настройки прокси</string><string name="proxy_none">Нет</string><string name="proxy_http">HTTP</string><string name="proxy_socks">SOCKS</string><string name="hostname">Имя хоста</string><string name="port">Порт</string><string name="proxy_authenticator">Аутентификация прокси</string><string name="username">Имя пользователя</string><string name="password">Пароль</string>
+    <string name="in_charset">Входная кодировка</string><string name="out_charset">Выходная кодировка</string><string name="in_message_topic">Входящая тема</string><string name="in_message_topic_hint">Получать сообщения из указанной темы</string><string name="out_message_topic">Исходящая тема</string><string name="out_message_topic_hint">Отправлять сообщения в указанную тему</string>
+    <string name="uri_type">Тип URI</string><string name="path">Путь</string><string name="qos">QoS</string><string name="qos_0">Не более одного раза (0)</string><string name="qos_1">Не менее одного раза (1)</string><string name="qos_2">Ровно один раз (2)</string><string name="retained">Сохраняемое сообщение</string><string name="path_hint">Используется для URI при обмене через ws</string><string name="client_id">ID клиента</string><string name="client_id_hint">Случайное значение, если поле пустое</string>
+    <string name="GotifyWebServer">WebServer</string><string name="GotifyWebServerTips"><![CDATA[например: https://push.ppps.cn/message?token=<apptoken>]]></string><string name="title_template">Шаблон заголовка</string><string name="auto_copy">Автокопирование</string><string name="priority">Приоритет (1–9)</string>
+    <string name="dingtalk_robot">Групповой бот DingTalk</string><string name="dingtalk_inner_robot">Внутренний бот DingTalk</string><string name="email">Электронная почта</string><string name="bark">Bark</string><string name="webhook">Webhook</string><string name="wework_robot">Бот Wework</string><string name="wework_agent">Агент Wework</string><string name="server_chan">ServerChan</string><string name="telegram">Telegram Bot</string><string name="sms_menu">SMS</string><string name="feishu">Бот FeiShu</string><string name="feishu_app">Приложение FeiShu</string><string name="pushplus">PushPlus</string><string name="gotify">Gotify</string><string name="_1">1</string>
+    <string name="forwarding_function">Функции пересылки</string><string name="forwarding_function_tips">Включайте нужные функции пересылки</string><string name="extra_function">Дополнительные функции</string><string name="extra_function_tips">Включайте дополнительные функции по необходимости</string>
+    <string name="call_date">Дата вызова: </string><string name="call_duration">Длительность разговора: </string><string name="ring_duration">Длительность звонка: </string><string name="type">Тип: </string><string name="mandatory_type">Тип вызова: </string>
+    <string name="incoming_call_received">Входящий обнаружен</string><string name="incoming_call_answered">Входящий принят</string><string name="incoming_call_ended">Входящий завершён</string><string name="outgoing_call_started">Исходящий начат</string><string name="outgoing_call_ended">Исходящий завершён</string><string name="missed_call">Пропущенный</string><string name="unknown_call">Неизвестный</string><string name="forwarding_call">Пересылка: </string><string name="optional_action">Необязательно: </string><string name="optional_type">Необязательно: </string>
+    <string name="keep_alive">Работа в фоне</string><string name="keep_alive_tips">Рекомендуется включить первые три механизма и не отключать постоянное уведомление, чтобы система не завершала приложение</string><string name="custom_settings">Пользовательские настройки</string><string name="custom_settings_tips">Введите примечание вручную или нажмите обновление для автоматического заполнения</string>
+    <string name="times">раз</string><string name="interval">Интервал</string><string name="interval_label">Увеличение интервала</string><string name="timeout_label">Тайм-аут одной попытки</string><string name="seconds">сек.</string><string name="seconds_n">%d сек.</string><string name="retry_label">Макс. повторов</string>
+    <string name="test_sender_sms">[%s] Тест отправителя выполнен успешно. Теперь добавьте правила пересылки.</string><string name="test_sender_name">Тестовый канал</string><string name="test_sim_info" tools:ignore="Typos">SIM1_TestOperator_18888888888</string><string name="keep_reminding">Продолжать напоминать</string><string name="keep_reminding_tips">После выхода за заданный порог каждое изменение уровня батареи продолжает вызывать событие.</string>
+    <string name="resend">Отправить повторно</string><string name="rematch">Повторно проверить</string><string name="from">От: </string><string name="title">Заголовок: </string><string name="msg">Сообщение: </string><string name="slot">Слот: </string><string name="rule">Правило: </string><string name="time">Время: </string><string name="result">Результат:</string><string name="original_result">Исходный результат:</string><string name="forward_status">Результат:</string><string name="success">Успешно</string><string name="failed">Ошибка</string><string name="processing">Выполняется</string>
+    <string name="rule_any">Любой</string><string name="rule_transpond_all">Пересылать всё</string><string name="rule_phone_num">Номер телефона</string><string name="rule_msg_content">Текст сообщения</string><string name="rule_multi_match">Несколько условий</string><string name="rule_package_name">Имя пакета</string><string name="rule_inform_content">Текст уведомления</string><string name="rule_call_type">Тип вызова</string><string name="rule_uid">UID</string><string name="rule_card">SIM</string><string name="rule_when">Когда</string><string name="rule_fw_to">Куда</string><string name="rule_all_fw_to">Пересылать всем</string>
+    <string name="rule_is">IS</string><string name="rule_notis">NOTIS</string><string name="rule_contain">CONTAIN</string><string name="rule_startwith">START_WITH</string><string name="rule_endwith">END_WITH</string><string name="rule_notcontain">NOT_CONTAIN</string><string name="rule_regex">REGEX</string>
+    <string name="package_name_copied">Имя пакета скопировано:</string><string name="enable_phone_fw_tips">Для пересылки журнала вызовов выберите хотя бы один тип вызова.</string><string name="tips_compatible_solution">Совместимое решение</string><string name="contact">Контакт:</string><string name="via_number">Через номер:</string>
+    <string name="toast_granted_all">Все необходимые разрешения получены.</string><string name="toast_granted_part">Часть разрешений не предоставлена; некоторые функции приложения могут быть ограничены.</string><string name="toast_denied_never">Разрешение запрещено навсегда. Открыть системные настройки для выдачи вручную?</string><string name="toast_denied">Не удалось получить необходимые разрешения; функции приложения могут быть ограничены.</string>
+    <string name="play_silence_music">Воспроизводить беззвучный звук</string><string name="one_pixel_activity">Активность 1 пиксель</string><string name="optional">Необязательно</string><string name="TelegramChatIdTips">Следуйте инструкции в wiki</string><string name="TelegramMessageThreadIdTips">Необязательно; следуйте инструкции в wiki</string><string name="tips_backup_path">Путь резервной копии: </string><string name="frpc_name">Имя конфигурации</string><string name="frpc_autorun">Автозапуск</string>
+    <string name="http_server">HttpServer</string><string name="start_server">Запустить сервер</string><string name="stop_server">Остановить сервер</string><string name="yes">Да</string><string name="no">Нет</string><string name="refresh">Обновить</string>
+    <string name="tip_can_not_get_sim_infos">Убедитесь, что разрешение приложения на получение информации о телефоне установлено в «Разрешать всегда»</string><string name="tip_can_not_get_sim_info">Не удалось получить информацию о SIM в слоте %d</string><string name="auto_check">Автопроверка</string><string name="check_update">Проверить</string><string name="join_preview_program">Предварительные сборки</string><string name="join_preview_program_tips">Использовать еженедельные сборки SmsF для раннего доступа к функциям и исправлениям</string><string name="clear_cache">Очистить</string><string name="delete_frpc">Удалить</string><string name="sender_name_status">Имя канала / состояние</string>
+</resources>
