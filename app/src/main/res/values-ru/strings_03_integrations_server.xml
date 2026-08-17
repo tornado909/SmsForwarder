@@ -1,0 +1,186 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="dingtalk_token">Webhook</string>
+    <string name="dingtalk_token_tips">например https://oapi.dingtalk.com/robot/send?access_token=XXX</string>
+    <string name="dingtalk_token_hint">Настройки робота → webhook</string>
+    <string name="dingtalk_secret">Secret</string>
+    <string name="dingtalk_secret_hint">Настройки робота → Безопасность → Подпись</string>
+    <string name="dingtalk_at_mobiles">Упомянуть номера</string>
+    <string name="dingtalk_at_mobiles_tip">Несколько номеров разделяйте запятыми, например 18888888888,19999999999</string>
+    <string name="dingtalk_at_dingtalkids">Упомянуть DingtalkId</string>
+    <string name="dingtalk_at_dingtalkids_tip">Несколько DingtalkId разделяйте запятыми, например user1,user2</string>
+
+    <string name="bark_server">Bark-Server</string>
+    <string name="bark_server_tips">например https://api.day.app/XXXXXXXX/</string>
+    <string name="bark_server_regex">^https?://[^/]+/[^/]+/.*</string>
+    <string name="bark_server_error">Неверный формат URL, например https://api.day.app/XXXXXXXX/</string>
+    <string name="bark_group">Название группы</string>
+    <string name="bark_group_tips">Необязательно, например SmsForwarder</string>
+    <string name="bark_icon">Значок сообщения</string>
+    <string name="bark_icon_tips">Необязательно: укажите URL изображения небольшого размера</string>
+    <string name="bark_call">Продолжать напоминать</string>
+    <string name="bark_sound">Звук сообщения</string>
+    <string name="bark_sound_tips">Необязательно, например minuet.caf</string>
+    <string name="bark_badge">Значок-счётчик</string>
+    <string name="bark_badge_tips">Необязательно, например 888</string>
+    <string name="bark_url">Ссылка сообщения</string>
+    <string name="bark_url_tips">Необязательно, например https://github.com/pppscn/SmsForwarder</string>
+    <string name="bark_level">Уровень уведомления</string>
+    <string name="bark_level_critical">Критическое: звук воспроизводится даже в беззвучном режиме</string>
+    <string name="bark_level_active">Показывать уведомление немедленно</string>
+    <string name="bark_level_timeSensitive">Срочное уведомление, разрешённое в режиме фокусирования</string>
+    <string name="bark_level_passive">Только добавить в список уведомлений, без показа на экране</string>
+    <string name="bark_url_regex" formatted="false" tools:ignore="TypographyDashes"><![CDATA[^(https?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]]]></string>
+    <string name="bark_url_regex2" formatted="false" tools:ignore="TypographyDashes"><![CDATA[^[a-z]+://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]]]></string>
+    <string name="bark_url_error">Неверный формат URL</string>
+    <string name="bark_encryption_algorithm">Алгоритм шифрования</string>
+    <string name="bark_encryption_algorithm_none">НЕТ</string>
+    <string name="bark_encryption_key">Ключ AES</string>
+    <string name="bark_encryption_key_tips">Соответствующий ключ в Bark</string>
+    <string name="bark_encryption_iv">AES IV</string>
+    <string name="bark_encryption_iv_tips">Соответствующий IV в Bark или оставьте пустым</string>
+    <string name="bark_encryption_key_error1">Ключ AES должен содержать 16 символов</string>
+    <string name="bark_encryption_key_error2">Ключ AES должен содержать 24 символа</string>
+    <string name="bark_encryption_key_error3">Ключ AES должен содержать 32 символа</string>
+    <string name="bark_encryption_key_error4">AES IV должен содержать 16 символов или быть пустым</string>
+    <string name="bark_encryption_key_error5">GCM IV должен содержать 12 символов или быть пустым</string>
+
+    <string name="from_email_hint">Введите имя пользователя до символа @</string>
+    <string name="other_mail_type">другой</string>
+    <string name="mail_pwd_hint">Введите пароль входа или код авторизации</string>
+
+    <string name="wework_webHook">WebHook</string>
+    <string name="wework_webHook_tips">например https://qyapi.weixin.qq.com/cgixx?key=xxx</string>
+    <string name="wework_msg_type">Тип сообщения</string>
+    <string name="wework_msg_type_text">Текст</string>
+    <string name="wework_msg_type_markdown">Markdown</string>
+    <string name="wework_at_mobiles">Упомянуть номера</string>
+    <string name="wework_at_mobiles_tip">Несколько номеров разделяйте запятыми, например 18888888888,19999999999</string>
+    <string name="wework_at_userids">Упомянуть UserId</string>
+    <string name="wework_at_userids_tip">Несколько UserId разделяйте запятыми, например user1,user2</string>
+
+    <string name="url_scheme">Схема URL</string>
+    <string name="url_scheme_tips">Пример: myapp://api/add?&amp;type=0&amp;msg=[msg]</string>
+    <string name="socket">Socket</string>
+    <string name="webhook_server">Сервер Webhook</string>
+    <string name="webhook_server_tips">Например: https://a.b.com/msg?token=xyz</string>
+    <string name="webhook_params">Параметры</string>
+    <string name="webhook_params_tips" formatted="false">Например: payload=%7B%22text%22%3A%22[msg]%22%7D; [msg] будет заменён текстом SMS.\nПоддерживается JSON, например {\"text\":\"[msg]\"}.\nВне JSON значение msg автоматически кодируется через URLEncoder.</string>
+    <string name="webhook_secret">Secret: если оставить пустым, подпись вычисляться не будет</string>
+    <string name="webhook_response">Ключевое слово успешного ответа: если пусто, HTTP 200 означает успех</string>
+    <string name="webhook_response2">Ключевое слово успешного ответа: если пусто, отправка считается успешной</string>
+    <string name="headers">Заголовки</string>
+    <string name="header_key">Ключ</string>
+    <string name="header_value">Значение</string>
+    <string name="header_del">Удалить заголовок</string>
+    <string name="select_sender_type">Выберите тип отправителя</string>
+    <string name="feishu_webhook_hint">Групповой робот → Адрес Webhook</string>
+    <string name="feishu_secret_hint">Групповой робот → Безопасность → Проверка подписи</string>
+    <string name="feishu_at_open_ids">@ Указанные пользователи (open_id или user_id)</string>
+    <string name="feishu_at_open_ids_tip">Введите open_id или user_id через запятую; оставьте пустым, чтобы никого не упоминать</string>
+    <string name="pushplus_token_hint">Получите токен на соответствующем официальном сайте</string>
+    <string name="choose_rule">Выберите из списка или найдите правило по ключевому слову</string>
+    <string name="choose_sender">Выберите из списка или найдите отправителя по ключевому слову</string>
+    <string name="choose_frpc">Выберите из списка или найдите Frpc по ключевому слову</string>
+    <string name="choose_task">Выберите из списка или найдите задачу по ключевому слову</string>
+    <string name="choose_app">Установленные приложения</string>
+    <string name="extra_app">Дополнительные приложения</string>
+    <string name="extra_app_hint">Одно имя пакета на строку.\nВключите асинхронную загрузку списка приложений для выбора.</string>
+    <string name="app_notify_blacklist">Чёрный список ключевых слов уведомлений</string>
+    <string name="app_notify_blacklist_hint">Одно ключевое слово на строку, поддерживаются регулярные выражения.\nНе пересылать, если заголовок или содержимое совпадает.</string>
+    <string name="choose_app_hint">Выберите приложение, чтобы получить имя пакета; поддерживается поиск по названию</string>
+    <string name="regex_multi_match" tools:ignore="TypographyDashes">^\\s*(AND|OR|and|or)\\s(IS|NOTIS)\\s(PHONE_NUM|PACKAGE_NAME|MSG_CONTENT|INFORM_CONTENT|INFORM_TITLE|CARD_SLOT|CALL_TYPE|UID)\\s(EQUALS|CONTAIN|NOT_CONTAIN|START_WITH|END_WITH|REGEX)\\s(.*)$</string>
+
+    <string name="privacy_content_1">Добро пожаловать в</string>
+    <string name="privacy_content_2">Мы понимаем важность персональной информации и благодарим вас за доверие.\n</string>
+    <string name="privacy_content_3">Для защиты ваших прав и соблюдения требований законодательства в документе «</string>
+    <string name="privacy_content_4">» мы объясняем, как собираем, храним, защищаем, используем и передаём вашу информацию, а также описываем ваши права.\n</string>
+    <string name="privacy_content_5">Подробнее см. полный текст «</string>
+    <string name="privacy_content_6">».\n\n</string>
+    <string name="privacy_content_7">Предоставьте разрешение на уведомления, чтобы приложение могло работать в фоне.</string>
+    <string name="request_succeeded">Запрос выполнен успешно</string>
+    <string name="request_failed">Ошибка запроса: </string>
+    <string name="request_failed_tips">Ошибка запроса: %s</string>
+    <string name="no_sms_sending_permission">Нет разрешения на отправку SMS</string>
+    <string name="frpclib_download_title">Отсутствует FrpcLib v%s</string>
+    <string name="frpclib_download_content">Загрузка, пожалуйста подождите…</string>
+    <string name="frpclib_version_mismatch">Версия FrpcLib не совпадает</string>
+    <string name="page_not_found">Страница не найдена!</string>
+    <string name="data_error">Ошибка данных!</string>
+    <string name="cannot_open_with_browser">Не удалось открыть в браузере</string>
+    <string name="share_to">Поделиться через</string>
+    <string name="third_party_app_not_installed">Выбранное стороннее приложение не установлено!</string>
+    <string name="description">Описание</string>
+    <string name="no_new_version">У вас установлена последняя версия.</string>
+    <string name="download_failed_switch_download_url">Не удалось загрузить приложение. Переключиться на источник %s?</string>
+    <string name="download_slow_switch_download_url">Загрузка не удалась или слишком медленная. Переключиться на источник %s?</string>
+    <string name="update_cancelled">Обновление отменено.</string>
+
+    <string name="CONJUNCTION_AND">AND</string><string name="CONJUNCTION_OR">OR</string>
+    <string name="FILED_PHONE_NUM">PHONE_NUM</string><string name="FILED_MSG_CONTENT">MSG_CONTENT</string><string name="FILED_PACKAGE_NAME">PACKAGE_NAME</string><string name="FILED_UID">UID</string><string name="FILED_INFORM_TITLE">INFORM_TITLE</string><string name="FILED_INFORM_CONTENT">INFORM_CONTENT</string><string name="FILED_SIM_SLOT_INFO">CARD_SLOT</string><string name="FILED_CALL_TYPE">CALL_TYPE</string>
+    <string name="SURE_YES">IS</string><string name="SURE_NOT">NOTIS</string><string name="CHECK_EQUALS">EQUALS</string><string name="CHECK_CONTAIN">CONTAIN</string><string name="CHECK_NOT_CONTAIN">NOT_CONTAIN</string><string name="CHECK_START_WITH">START_WITH</string><string name="CHECK_END_WITH">END_WITH</string><string name="CHECK_REGEX">REGEX</string>
+
+    <string name="auto_start_unknown">Неизвестный производитель: проверьте настройки автозапуска вручную</string>
+    <string name="auto_start_huawei"><![CDATA[Huawei: Управление запуском приложений → отключите автоматическое управление → разрешите автозапуск]]></string>
+    <string name="auto_start_honor"><![CDATA[Honor: Управление запуском приложений → отключите автоматическое управление → разрешите автозапуск]]></string>
+    <string name="auto_start_xiaomi"><![CDATA[Xiaomi: Разрешения → Автозапуск → разрешите автозапуск приложения]]></string>
+    <string name="auto_start_oppo"><![CDATA[OPPO: Разрешения и конфиденциальность → Автозапуск → разрешите автозапуск приложения]]></string>
+    <string name="auto_start_vivo"><![CDATA[VIVO: Управление разрешениями → Автозапуск → разрешите автозапуск приложения]]></string>
+    <string name="auto_start_meizu"><![CDATA[Meizu: Управление разрешениями → Работа в фоне → разрешите работу в фоне]]></string>
+    <string name="auto_start_samsung"><![CDATA[Samsung: Автозапуск приложений → включите приложение → Батарея → Неотслеживаемые приложения → добавьте приложение]]></string>
+    <string name="auto_start_letv"><![CDATA[LeTV: Управление автозапуском → разрешите автозапуск приложения]]></string>
+    <string name="auto_start_smartisan"><![CDATA[Smartisan: Разрешения → Автозапуск → разрешите запуск приложением системы]]></string>
+    <string name="need_to_restart">Для применения этой настройки приложение необходимо перезапустить</string>
+
+    <string name="http_server_running">HttpServer запущен на %1$s:%2$d</string>
+    <string name="http_server_stopped">HttpServer остановлен.</string>
+    <string name="server_settings">Настройки сервера</string>
+    <string name="server_settings_tips">Рекомендуется включить подпись. Нажмите «Случайный», чтобы создать ключ и скопировать его.</string>
+    <string name="sign_key">Ключ подписи</string>
+    <string name="rsa_key_tips">Пара ключей создана и скопирована в буфер обмена</string>
+    <string name="rsa_key_tips2">Скопировано в буфер обмена</string>
+    <string name="sign_key_tips">Ключ создан и скопирован в буфер обмена</string>
+    <string name="copy" tools:ignore="PrivateResource">Копировать</string>
+    <string name="random">Случайный</string>
+    <string name="enable_function">Включить функцию</string>
+    <string name="disable_function">Отключить функцию</string>
+    <string name="enable_function_tips">Выберите функции, которыми разрешено управлять удалённо</string>
+    <string name="api_clone">Клонирование одним нажатием</string>
+    <string name="api_clone_tips">Клонирование общей конфигурации, отправителей и правил на новое устройство</string>
+    <string name="api_sms_send">Отправить SMS</string>
+    <string name="api_sms_send_tips">Отправка платная согласно тарифу вашего оператора</string>
+    <string name="api_sms_query">Просмотр SMS</string>
+    <string name="api_sms_query_tips">Удалённый просмотр SMS как дополнение к пересылке</string>
+    <string name="api_call_query">Просмотр вызовов</string>
+    <string name="api_call_query_tips">Удалённый просмотр входящих, исходящих и пропущенных вызовов</string>
+    <string name="api_contact_query">Просмотр контактов</string>
+    <string name="api_contact_query_tips">Удалённый просмотр списка контактов</string>
+    <string name="api_contact_add">Добавить контакт</string>
+    <string name="api_contact_add_tips">Удалённое добавление контакта</string>
+    <string name="api_battery_query">Состояние батареи</string>
+    <string name="api_battery_query_tips">Удалённый просмотр заряда и состояния батареи</string>
+    <string name="api_wol">Удалённый WOL</string>
+    <string name="api_wol_tips">Удалённо включать устройства с поддержкой Wake-on-LAN</string>
+    <string name="api_location">Местоположение</string>
+    <string name="api_location_tips">Удалённый запрос местоположения телефона</string>
+    <string name="api_location_permission_tips">Сначала включите «Службу местоположения» в настройках.</string>
+    <string name="location_longitude">Долгота: %s</string><string name="location_latitude">Широта: %s</string><string name="location_address">Адрес: %s</string><string name="location_time">Время: %s</string><string name="location_provider">Источник: %s</string>
+
+    <string name="sim_slot">Слот SIM</string><string name="display_name">Отображаемое имя</string><string name="display_name_hint">Необязательно, имя в адресной книге</string>
+    <string name="phone_numbers">Номера телефонов</string><string name="phone_numbers_hint">Обязательно; несколько номеров разделяйте точкой с запятой</string><string name="phone_numbers_error">Неверные номера, например 15888888888;19999999999</string>
+    <string name="phone_numbers_regex">^(\\+?\\d{3,20})(;\\+?\\d{3,20})*$</string>
+    <string name="phone_numbers_with_tag_hint">Обязательно; несколько номеров или тегов разделяйте точкой с запятой</string>
+    <string name="phone_numbers_with_tag_error">Неверные номера, например 15888888888;{{FROM}};{{SMS###\s*SMS,{([^}]+)},{([^}]+)}\s*===$1}}</string>
+    <string name="phone_numbers_with_tag_regex">^((\\+?\\d{3,20})|\\{\\{([^#]+)(?:###([^=]+)===(.*?))?\\}\\})(;((\\+?\\d{3,20})|\\{\\{([^#]+)(?:###([^=]+)===(.*?))?\\}\\}))*$</string>
+    <string name="msg_content">Текст сообщения</string><string name="msg_content_hint">Обязательно; до 70 символов — одно SMS, далее каждые дополнительные 64 символа добавляют ещё одно SMS</string><string name="msg_content_error">Текст сообщения не может быть пустым; максимум 390 символов (6 SMS)</string><string name="msg_content_regex">^.{1,390}$</string>
+
+    <string name="battery_unknown">неизвестно</string><string name="battery_unlimited">без ограничений</string><string name="battery_ac">Сеть</string><string name="battery_usb">USB</string><string name="battery_wireless">Беспроводная</string><string name="battery_charging">Заряжается</string><string name="battery_discharging">Разряжается</string><string name="battery_not_charging">Не заряжается</string><string name="battery_full">Полный заряд</string><string name="battery_good">Норма</string><string name="battery_overheat">Перегрев</string><string name="battery_dead">Неисправна</string><string name="battery_over_voltage">Перенапряжение</string><string name="battery_unspecified_failure">Неизвестная неисправность</string>
+    <string name="battery_cold">Переохлаждение</string><string name="battery_level">Уровень: %s</string><string name="battery_scale">Шкала: %s</string><string name="battery_voltage">Напряжение: %s</string><string name="battery_temperature">Температура: %s</string><string name="battery_status">Состояние: %s</string><string name="battery_status_title">Состояние</string><string name="battery_health">Состояние батареи: %s</string><string name="battery_plugged">Источник питания: %s</string><string name="battery_plugged_title">Источник питания</string><string name="battery_voltage_title">Напряжение (мВ)</string><string name="battery_temperature_title">Температура (℃)</string><string name="battery_health_title">Состояние батареи</string><string name="battery_health_changed">, состояние батареи изменилось: </string>
+    <string name="battery_voltage_range_error">Минимальное напряжение не может превышать максимальное</string><string name="battery_temperature_range_error">Минимальная температура не может превышать максимальную</string><string name="condition_match_type_title">Тип совпадения</string><string name="condition_match_all">Совпадают все</string><string name="condition_match_any">Совпадает любое</string>
+
+    <string name="server_history">История</string><string name="server_test">Войти</string><string name="invalid_service_address">Некорректный адрес сервиса\nФормат: http://127.0.0.1:5000 или https://smsf.demo.com</string><string name="click_test_button_first">Сначала нажмите кнопку проверки, чтобы получить список функций, разрешённых сервером</string><string name="disabled_on_the_server">Эта функция отключена на сервере</string><string name="frpc_failed_to_run">Не удалось запустить Frpc</string><string name="successfully_deleted">Успешно удалено</string>
+    <string name="sender_disabled_tips">[Примечание] Отправитель отключён; связанные с ним правила не будут отправляться даже при совпадении.</string><string name="sender_contains_tips">[Примечание] Такой отправитель уже есть в списке.</string><string name="rule_contains_tips">[Примечание] Такое правило уже есть в списке.</string><string name="frpc_contains_tips">[Примечание] Такая конфигурация frpc уже есть в списке.</string><string name="task_contains_tips">[Примечание] Такая задача уже есть в списке.</string>
+    <string name="local_call">Локальный вызов:</string><string name="remote_sms">Удалённое SMS:</string><string name="clear">Очистить</string><string name="storage_permission_tips">Нет разрешения на хранилище; функция недоступна.</string><string name="write_settings_permission_tips">Нет разрешения на изменение системных настроек; функция недоступна.</string><string name="contact_info" formatted="false">Имя: %s\nТелефон: %s</string><string name="card_slot_does_not_match">Слот SIM не соответствует правилу</string><string name="unmatched_rule">Правило не совпало</string><string name="matched_rule">Правило совпало</string><string name="copied_to_clipboard">Скопировано в буфер обмена:\n%s</string><string name="search_keyword">Ключевое слово: %s</string>
+    <string name="export_succeeded">Конфигурация успешно экспортирована.</string><string name="export_failed">Ошибка экспорта. Проверьте разрешение на запись.</string><string name="export_failed_tips">Ошибка экспорта: %s</string><string name="import_failed">Ошибка импорта. Проверьте доступ к внешнему хранилищу.</string><string name="import_failed_file_not_exist">Ошибка импорта: локальный файл резервной копии не найден</string><string name="import_succeeded">Конфигурация успешно импортирована.</string><string name="import_failed_tips">Ошибка импорта: %s</string><string name="restore_failed">Ошибка восстановления</string>
+    <string name="below_level_min">[Батарея] Заряд ниже нижнего порога. Подключите зарядное устройство. %s</string><string name="over_level_max">[Батарея] Заряд выше верхнего порога. Отключите зарядное устройство. %s</string><string name="reach_level_min">[Батарея] Достигнут нижний порог заряда. Подключите зарядное устройство. %s</string><string name="reach_level_max">[Батарея] Достигнут верхний порог заряда. Отключите зарядное устройство. %s</string><string name="battery_status_changed">Состояние зарядки изменилось:</string><string name="battery_status_required">Выберите хотя бы одно состояние батареи</string>
+    <string name="no_indentation_allowed_on_the_first_line">Первая строка не может иметь отступ</string><string name="sign_required">На сервере включён ключ подписи; требуется поле sign</string><string name="timestamp_required">На сервере включён ключ подписи; требуется поле timestamp</string><string name="sign_verify_failed">Проверка подписи не пройдена</string><string name="version_code_required">Требуется version_code</string><string name="inconsistent_version">Версии приложения клиента и сервера не совпадают</string><string name="timestamp_verify_failed" formatted="false">Проверка времени не пройдена: разница с сервером (%s) не должна превышать %s сек. (diffTime=%s)</string>
+</resources>
