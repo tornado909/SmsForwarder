@@ -1,0 +1,84 @@
+name: Build Russian APK
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: russian-apk-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build SmsForwarder RU
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 11
+        uses: actions/setup-java@v4
+        with:
+          distribution: zulu
+          java-version: '11'
+
+      - name: Set up Gradle cache
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Make Gradle executable
+        run: chmod +x ./gradlew
+
+      - name: Create CI signing key
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p keystore
+          keytool -genkeypair -v \
+            -keystore keystore/smsforwarder-ci.keystore \
+            -storepass android \
+            -alias smsforwarder \
+            -keypass android \
+            -keyalg RSA \
+            -keysize 2048 \
+            -validity 10000 \
+            -dname "CN=SmsForwarder RU CI,O=tornado909,C=RU"
+
+          cat > keystore/keystore.properties <<'EOF'
+          storeFile=../keystore/smsforwarder-ci.keystore
+          storePassword=android
+          keyAlias=smsforwarder
+          keyPassword=android
+          EOF
+
+      - name: Build release APK
+        run: ./gradlew assembleRelease --no-daemon --stacktrace
+
+      - name: Prepare universal Russian APK
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "Generated APK files:"
+          find build/app/outputs/apk/release -type f -name '*.apk' -print
+
+          APK="$(find build/app/outputs/apk/release -type f -name '*universal*release.apk' | head -n 1)"
+          if [ -z "$APK" ]; then
+            echo "Universal release APK was not found"
+            exit 1
+          fi
+
+          cp "$APK" SmsForwarder-RU.apk
+          ls -lh SmsForwarder-RU.apk
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: SmsForwarder-RU-APK
+          path: SmsForwarder-RU.apk
+          if-no-files-found: error
+          retention-days: 30
