@@ -1,121 +1,299 @@
 ![SmsForwarder](pic/SmsForwarder.png)
 
-# SmsForwarder-短信转发器
+# SmsForwarder — пересылка SMS, звонков и уведомлений
 
-[English Version](README_en.md)
+> 🇷🇺 **Русская версия SmsForwarder** на основе оригинального проекта [pppscn/SmsForwarder](https://github.com/pppscn/SmsForwarder).
+>
+> В этом форке добавлена полноценная русская локализация интерфейса и автоматическая сборка универсального APK через GitHub Actions.
 
-[![GitHub release](https://img.shields.io/github/release/pppscn/SmsForwarder.svg)](https://github.com/pppscn/SmsForwarder/releases) [![GitHub stars](https://img.shields.io/github/stars/pppscn/SmsForwarder)](https://github.com/pppscn/SmsForwarder/stargazers) [![GitHub forks](https://img.shields.io/github/forks/pppscn/SmsForwarder)](https://github.com/pppscn/SmsForwarder/network/members) [![GitHub issues](https://img.shields.io/github/issues/pppscn/SmsForwarder)](https://github.com/pppscn/SmsForwarder/issues) [![GitHub license](https://img.shields.io/github/license/pppscn/SmsForwarder)](https://github.com/pppscn/SmsForwarder/blob/main/LICENSE)
+[English README оригинального проекта](README_en.md)
 
---------
+[![Build Russian APK](https://github.com/tornado909/SmsForwarder/actions/workflows/Build_Russian_APK.yml/badge.svg)](https://github.com/tornado909/SmsForwarder/actions/workflows/Build_Russian_APK.yml)
+[![GitHub license](https://img.shields.io/github/license/tornado909/SmsForwarder)](LICENSE)
 
-短信转发器——不仅只转发短信，备用机必备神器！
+---
 
-监控Android手机短信、来电、APP通知，并根据指定规则转发到其他手机：钉钉群自定义机器人、钉钉企业内机器人、企业微信群机器人、企业微信应用消息、飞书群机器人、飞书企业应用、邮箱、bark、webhook、Tele****机器人、Server酱、PushPlus、手机短信等。
+## Что это такое
 
-包括主动控制服务端与客户端，让你轻松远程发短信、查短信、查通话、查话簿、查电量等。（V3.0 新增）
+**SmsForwarder** — бесплатное Android-приложение с открытым исходным кодом для автоматической пересылки событий с телефона.
 
-自动任务・快捷指令，轻松自动化，助您事半功倍，更多时间享受亲情陪伴！（v3.3 新增）
+Приложение умеет отслеживать:
 
-> 注意：从`2022-06-06`开始，原`Java版`的代码归档到`v2.x`分支，不再更新！
+- входящие SMS;
+- историю звонков и пропущенные вызовы;
+- уведомления Android-приложений;
+- состояние батареи;
+- состояние сети;
+- местоположение устройства;
+- события Bluetooth;
+- автоматические задачи и расписания.
 
-> `v3.x` 适配 Android 4.4 ~ 13.0
+Полученные события можно фильтровать правилами и отправлять через разные каналы, включая:
 
-> `加入SmsF预览体验计划`（在线更新每周构建版，率先体验新版&修复BUG）
+- Telegram Bot;
+- электронную почту;
+- Webhook;
+- Bark;
+- Gotify;
+- PushPlus;
+- ServerChan;
+- DingTalk;
+- WeCom / WeWork;
+- FeiShu;
+- MQTT;
+- обычные SMS;
+- другие поддерживаемые приложением сервисы.
 
-**升级操作提示：**
+Кроме пересылки событий SmsForwarder содержит HTTP-сервер и клиент удалённого управления, позволяющие при соответствующей настройке удалённо запрашивать SMS, журнал вызовов, контакты, состояние батареи, местоположение и выполнять другие поддерживаемые операции.
 
-- `加入SmsF预览体验计划`后在线更新（`关于软件`页面开启，`v3.3.0_240305+`适用）
-- 手动下载：https://github.com/pppscn/SmsForwarder/actions/workflows/Weekly_Build.yml
+Также доступны **автоматические задачи**: запуск действий по расписанию, состоянию батареи, сети, SIM-карты, Bluetooth, экрану, геолокации, входящему SMS/звонку/уведомлению и другим условиям.
 
---------
+> Версия 3.x рассчитана на Android 4.4–13 согласно оригинальному проекту.
 
-## 特别声明:
+---
 
-* 本仓库发布的`SmsForwarder`项目中涉及的任何代码/APK，仅用于测试和学习研究，禁止用于商业用途，不能保证其合法性，准确性，完整性和有效性，请根据情况自行判断。
+## Русская локализация
 
-* 任何用户直接或间接使用或传播`SmsForwarder`的任何代码或APK，无论该等使用是否符合其所在国家或地区，或该等使用或传播发生的国家或地区的法律，`pppscn`和/或代码仓库的任何其他贡献者均不对该等行为产生的任何后果（包括但不限于隐私泄露）负责。
+В этом форке интерфейс переведён на русский язык, включая:
 
-* 如果任何单位或个人认为该项目的代码/APK可能涉嫌侵犯其权利，则应及时通知并提供身份证明，所有权证明，我们将在收到认证文件后删除相关代码/APK。
+- главное меню и настройки;
+- правила пересылки;
+- отправителей и каналы доставки;
+- Telegram, Webhook, Email, Bark, DingTalk, WeWork, FeiShu и другие интеграции;
+- HTTP Server и удалённый клиент;
+- автоматические задачи;
+- батарею, сеть, SIM, Bluetooth и геолокацию;
+- сообщения об ошибках, разрешениях и состоянии приложения.
 
-* 隐私声明： **SmsForwarder 不会收集任何您的隐私数据！！！** APP启动时发送版本信息发送到友盟统计；手动检查新版本时发送版本号用于检查新版本；除此之外，没有任何数据！！！
+При русском языке Android локализация используется автоматически через режим **«Как в системе»**.
 
-* 防诈提醒： `SmsForwarder`完全免费开源，请您在 [打赏](https://gitee.com/pp/SmsForwarder/wikis/pages?sort_id=4912193&doc_id=1821427) 前务必确认是否出于自愿？本项目不参与任何刷单返利担保！**请您远离刷单返利陷阱，谨防网络诈骗！**
+Технические идентификаторы, имена API-параметров, регулярные выражения, URL, JSON и шаблонные переменные (`{{FROM}}`, `{{APP_NAME}}`, `{{LOCATION}}` и т. п.) намеренно не переводятся, чтобы не нарушить работу правил и интеграций.
 
---------
+---
 
-## 工作流程：
+## Скачать русский APK
 
-![工作流程](pic/working_principle.png "working_principle.png")
+APK собирается **автоматически на GitHub**, поэтому Android Studio, локальный Gradle и ручная подпись не требуются.
 
---------
+### Последняя сборка
 
-## 界面预览：
+Откройте:
 
-![界面预览](pic/screenshots.jpg "screenshots.jpg")
+**[GitHub Actions → Build Russian APK](https://github.com/tornado909/SmsForwarder/actions/workflows/Build_Russian_APK.yml)**
 
-更多截图参见 https://github.com/pppscn/SmsForwarder/wiki
+Выберите последний успешный запуск и скачайте artifact:
 
---------
+**`SmsForwarder-RU-APK`**
 
-## 下载地址
+Внутри находится файл:
 
-> ⚠ 首发地址：https://github.com/pppscn/SmsForwarder/releases
+```text
+SmsForwarder-RU.apk
+```
 
-> ⚠ 国内镜像：https://gitee.com/pp/SmsForwarder/releases
+Собирается **universal APK**, подходящий для поддерживаемых проектом архитектур:
 
-> ⚠ 网盘下载：https://wws.lanzoui.com/b025yl86h 访问密码：`pppscn`
+- ARM64 (`arm64-v8a`);
+- ARM32 (`armeabi-v7a`);
+- x86;
+- x86_64.
 
---------
+### Автоматическая сборка
 
-## 使用文档【新用户必看！】
+Workflow запускается при каждом push в ветку `main` и также может запускаться вручную через `workflow_dispatch`.
 
-> ⚠ GitHub Wiki：https://github.com/pppscn/SmsForwarder/wiki
+Сборка выполняет:
 
-> ⚠ Gitee Wiki：https://gitee.com/pp/SmsForwarder/wikis/pages
+1. checkout исходного кода;
+2. настройку JDK 11;
+3. восстановление постоянного CI-ключа подписи;
+4. `./gradlew assembleRelease`;
+5. выбор universal release APK;
+6. переименование результата в `SmsForwarder-RU.apk`;
+7. публикацию APK как GitHub Actions artifact.
 
-![使用流程与问题排查流程](pic/Troubleshooting_Process.png "Troubleshooting_Process.png")
+Для русской версии используется отдельный постоянный CI-ключ подписи. Это позволяет устанавливать новые сборки этого форка поверх предыдущих русских сборок без удаления приложения.
 
---------
+> ⚠️ Подпись русской сборки отличается от официальной подписи оригинального `pppscn/SmsForwarder`. Если на телефоне уже установлена официальная APK оригинального проекта, Android может потребовать сначала удалить её перед установкой APK из этого форка. Перед удалением приложения рекомендуется экспортировать конфигурацию.
 
-## 反馈与建议：
+---
 
-+ 提交issues 或 pr
-+ 加入交流群（群内都是机油互帮互助，禁止发任何与SmsForwarder使用无关的内容）
+## Основные возможности
 
-|                      TG Group                       |
-|:---------------------------------------------------:|
-|         ![TG Group](pic/tg.png "TG Group")          |
+### Пересылка SMS
+
+Можно создавать правила по номеру отправителя, содержимому сообщения, SIM-карте и другим параметрам. Поддерживаются обычные условия, несколько условий и регулярные выражения.
+
+### Пересылка звонков
+
+Поддерживается обработка входящих, исходящих и пропущенных вызовов с фильтрацией по номеру и типу события.
+
+### Пересылка уведомлений приложений
+
+SmsForwarder может читать уведомления выбранных приложений и пересылать их содержимое по заданным правилам. Для этой функции необходимо предоставить Android-разрешение на доступ к уведомлениям.
+
+### Пользовательские шаблоны
+
+При отправке можно использовать переменные, например данные об отправителе, сообщении, приложении, устройстве, батарее, сети и местоположении.
+
+### Автоматические задачи
+
+Действия могут выполняться по:
+
+- Cron-расписанию;
+- уровню и состоянию батареи;
+- подключению/отключению зарядки;
+- состоянию сети и Wi-Fi;
+- состоянию SIM;
+- включению/выключению и блокировке экрана;
+- входящим SMS;
+- вызовам;
+- уведомлениям приложений;
+- Bluetooth-событиям;
+- входу или выходу из геозоны.
+
+Среди действий доступны отправка SMS/уведомлений, управление правилами и отправителями, запуск/остановка FRPC и HTTP Server, WOL, очистка журналов, повторная отправка сообщений и другие функции.
+
+### HTTP Server и удалённое управление
+
+Встроенный HTTP Server предоставляет поддерживаемые проектом функции удалённого управления. При публикации сервера в интернет настоятельно рекомендуется использовать предусмотренные приложением механизмы подписи и шифрования и не открывать незащищённый интерфейс в публичную сеть.
+
+---
+
+## Разрешения Android
+
+Для разных функций могут потребоваться разрешения на:
+
+- чтение SMS;
+- получение SMS;
+- журнал вызовов;
+- контакты;
+- чтение уведомлений;
+- отправку уведомлений;
+- состояние телефона/SIM;
+- местоположение;
+- Bluetooth;
+- работу в фоне;
+- исключение из оптимизации батареи;
+- доступ к файлам для импорта/экспорта.
+
+Выдавайте только те разрешения, которые действительно нужны для используемых вами функций.
+
+---
+
+## Работа в фоне
+
+Android и оболочки производителей могут останавливать приложение для экономии энергии. Для надёжной пересылки рекомендуется:
+
+- разрешить автозапуск SmsForwarder;
+- разрешить работу в фоне;
+- отключить для него агрессивную оптимизацию батареи;
+- не запрещать постоянное уведомление фоновой службы;
+- проверить дополнительные настройки энергосбережения конкретного производителя телефона.
+
+---
+
+## Импорт и экспорт конфигурации
+
+Перед обновлением, переустановкой или переходом между официальной и русской сборками рекомендуется сделать резервную копию конфигурации средствами приложения.
+
+При клонировании конфигурации между устройствами версии клиента и сервера должны соответствовать требованиям оригинального приложения.
+
+---
+
+## Схема работы
+
+![Схема работы](pic/working_principle.png "working_principle.png")
+
+---
+
+## Интерфейс
+
+![Скриншоты интерфейса](pic/screenshots.jpg "screenshots.jpg")
+
+Скриншоты относятся к оригинальному проекту и могут отличаться от актуальной версии интерфейса.
+
+---
+
+## Документация оригинального проекта
+
+Большая часть технической документации и примеров настройки создана авторами оригинального SmsForwarder:
+
+- [GitHub Wiki](https://github.com/pppscn/SmsForwarder/wiki)
+- [Gitee Wiki](https://gitee.com/pp/SmsForwarder/wikis/pages)
+
+![Схема использования и диагностики](pic/Troubleshooting_Process.png "Troubleshooting_Process.png")
+
+---
+
+## Оригинальный проект
+
+Этот репозиторий является форком:
+
+**[pppscn/SmsForwarder](https://github.com/pppscn/SmsForwarder)**
+
+Все основные функции приложения и подавляющая часть исходного кода разработаны авторами и участниками оригинального проекта. Данный форк в первую очередь добавляет русскую локализацию и удобную автоматическую сборку русского APK.
+
+Если проблема относится не к русскому переводу или CI этого форка, имеет смысл также проверить issues и документацию оригинального проекта.
+
+---
+
+## Важное предупреждение
+
+- SmsForwarder предназначен для законного использования на собственных устройствах или устройствах, на использование которых у вас есть разрешение.
+- Не используйте приложение для скрытого перехвата чужих SMS, уведомлений, звонков, местоположения или другой информации.
+- Пользователь самостоятельно отвечает за соблюдение законодательства своей страны и правил используемых сторонних сервисов.
+- Не публикуйте токены Telegram, пароли почты, Webhook-secret, ключи API, приватные ключи и другие секреты в открытом репозитории или скриншотах.
+- При использовании удалённого сервера через интернет обязательно настройте защиту доступа.
+
+### Конфиденциальность
+
+Оригинальный проект заявляет, что SmsForwarder не предназначен для сбора пользовательских персональных данных разработчиком; при этом приложение по своему назначению обрабатывает локальные SMS, уведомления, журнал вызовов и другие данные, к которым пользователь предоставляет ему доступ. Также оригинальная версия содержит компоненты проверки обновлений и статистики.
+
+Перед использованием рекомендуется самостоятельно ознакомиться с исходным кодом и политикой конфиденциальности оригинального проекта.
+
+---
+
+## Обратная связь
+
+По вопросам именно этой русской версии можно использовать **Issues** данного форка:
+
+[https://github.com/tornado909/SmsForwarder/issues](https://github.com/tornado909/SmsForwarder/issues)
+
+Для вопросов по оригинальной реализации:
+
+[https://github.com/pppscn/SmsForwarder/issues](https://github.com/pppscn/SmsForwarder/issues)
+
+Сообщество оригинального проекта:
+
+| Telegram Group |
+|:--------------:|
+| ![TG Group](pic/tg.png "TG Group") |
 | [+QBZgnL_fxYM0NjE9](https://t.me/+QBZgnL_fxYM0NjE9) |
 
-## 感谢
+---
 
-> [感谢所有赞助本项目的热心网友 --> 打赏名单](https://gitee.com/pp/SmsForwarder/wikis/pages?sort_id=4912193&doc_id=1821427)
+## Благодарности
 
-> 本项目得到以下项目的支持与帮助，在此表示衷心的感谢！
+Спасибо авторам и участникам оригинального SmsForwarder, а также проектам, на которых он основан или которые используются в приложении:
 
-+ https://github.com/xiaoyuanhost/TranspondSms (项目原型)
-+ https://github.com/xuexiangjys/XUI （UI框架）
-+ https://github.com/xuexiangjys/XUpdate （在线升级）
-+ https://github.com/getActivity/XXPermissions (权限请求框架)
-+ https://github.com/mainfunx/frpc_android (内网穿透)
-+ https://github.com/gyf-dev/Cactus (保活措施)
-+ https://github.com/yanzhenjie/AndServer (HttpServer)
-+ https://github.com/jenly1314/Location (Location)
-+ https://gitee.com/xuankaicat/kmnkt (socket通信)
-+ [<img src="https://resources.jetbrains.com/storage/products/company/brand/logos/jetbrains.svg" alt="GitHub license" style="width：159px; height: 32px" width="159" height="32" />](https://jb.gg/OpenSourceSupport)  (License Certificate for JetBrains All Products Pack)
+- [pppscn/SmsForwarder](https://github.com/pppscn/SmsForwarder) — оригинальный проект;
+- [xiaoyuanhost/TranspondSms](https://github.com/xiaoyuanhost/TranspondSms) — прототип проекта;
+- [xuexiangjys/XUI](https://github.com/xuexiangjys/XUI) — UI-фреймворк;
+- [xuexiangjys/XUpdate](https://github.com/xuexiangjys/XUpdate) — обновление приложения;
+- [getActivity/XXPermissions](https://github.com/getActivity/XXPermissions) — управление разрешениями;
+- [mainfunx/frpc_android](https://github.com/mainfunx/frpc_android) — FRPC;
+- [gyf-dev/Cactus](https://github.com/gyf-dev/Cactus) — поддержание работы приложения в фоне;
+- [yanzhenjie/AndServer](https://github.com/yanzhenjie/AndServer) — HTTP Server;
+- [jenly1314/Location](https://github.com/jenly1314/Location) — работа с местоположением;
+- [xuankaicat/kmnkt](https://gitee.com/xuankaicat/kmnkt) — socket-связь.
 
---------
+[<img src="https://resources.jetbrains.com/storage/products/company/brand/logos/jetbrains.svg" alt="JetBrains" width="159" height="32" />](https://jb.gg/OpenSourceSupport)
 
-## 如果您觉得本工具对您有帮助，不妨在右上角点亮一颗小星星，以示鼓励！
+---
 
-<p align="center">
-  <a href="https://github.com/pppscn/SmsForwarder/tree/star-history">
-    <img alt="Star History Chart" src="https://raw.githubusercontent.com/pppscn/SmsForwarder/refs/heads/star-history/star-history.svg" />
-  </a>
-</p>
+## Лицензия
 
---------
+Проект распространяется по лицензии **BSD**. См. файл [LICENSE](LICENSE).
 
-## LICENSE
-
-BSD
+Русская локализация и изменения этого форка не отменяют условия лицензии и авторство оригинального проекта.
