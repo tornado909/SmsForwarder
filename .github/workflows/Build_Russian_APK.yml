@@ -34,20 +34,18 @@ jobs:
       - name: Make Gradle executable
         run: chmod +x ./gradlew
 
-      - name: Create CI signing key
+      - name: Restore stable CI signing key
         shell: bash
         run: |
           set -euo pipefail
           mkdir -p keystore
-          keytool -genkeypair -v \
+          base64 --decode .github/ci/smsforwarder-ru-ci.keystore.b64 > keystore/smsforwarder-ci.keystore
+
+          echo "CI signing certificate:"
+          keytool -list -v \
             -keystore keystore/smsforwarder-ci.keystore \
             -storepass android \
-            -alias smsforwarder \
-            -keypass android \
-            -keyalg RSA \
-            -keysize 2048 \
-            -validity 10000 \
-            -dname "CN=SmsForwarder RU CI,O=tornado909,C=RU"
+            -alias smsforwarder | grep -E 'Alias name:|SHA256:' || true
 
           cat > keystore/keystore.properties <<'EOF'
           storeFile=../keystore/smsforwarder-ci.keystore
